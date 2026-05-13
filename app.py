@@ -480,15 +480,26 @@ def home(
 
     return templates.TemplateResponse(
 
-        "index.html",
+    request=request,
 
-        {
-            "request": request,
-            "activities": activities,
-            "conflicts": conflicts,
-            "selected_week": week,
-            "weeks": weeks,
-            "current_year": CURRENT_YEAR,
-            "available_days": available_days
-        }
-    )
+    name="index.html",
+
+    context={
+
+        "request": request,
+
+        "activities": activities,
+
+        "conflicts": conflicts,
+
+        "selected_week": week,
+
+        "weeks": weeks,
+
+        "current_year": CURRENT_YEAR,
+
+        "available_days": available_days
+
+    }
+
+)
